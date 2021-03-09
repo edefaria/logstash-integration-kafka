@@ -32,7 +32,7 @@ Gem::Specification.new do |s|
   s.metadata = {
       "logstash_plugin"     => "true",
       "logstash_group"      => "integration",
-      "integration_plugins" => "logstash-input-kafka,logstash-output-kafka"
+      "integration_plugins" => "logstash-output-kafka"
   }
 
   s.add_development_dependency 'jar-dependencies', '>= 0.3.12'

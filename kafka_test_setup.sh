@@ -25,11 +25,13 @@ build/kafka/bin/kafka-server-start.sh -daemon build/kafka/config/server.properti
 sleep 10
 
 echo "Downloading Confluent Platform"
-curl -s -o build/confluent_platform.tar.gz http://packages.confluent.io/archive/6.1/confluent-community-6.1.0.tar.gz
+curl -s -o build/confluent_platform.tar.gz http://packages.confluent.io/archive/6.1/confluent-community-6.1.1.tar.gz
 mkdir build/confluent_platform && tar xzf build/confluent_platform.tar.gz -C build/confluent_platform --strip-components 1
 
 echo "Setting up test topics with test data"
 build/kafka/bin/kafka-topics.sh --create --partitions 3 --replication-factor 1 --topic logstash_integration_topic_plain --zookeeper localhost:2181
+build/kafka/bin/kafka-topics.sh --create --partitions 3 --replication-factor 1 --topic logstash_integration_topic_plain_with_headers --zookeeper localhost:2181
+build/kafka/bin/kafka-topics.sh --create --partitions 3 --replication-factor 1 --topic logstash_integration_topic_plain_with_headers_badly --zookeeper localhost:2181
 build/kafka/bin/kafka-topics.sh --create --partitions 3 --replication-factor 1 --topic logstash_integration_topic_snappy --zookeeper localhost:2181
 build/kafka/bin/kafka-topics.sh --create --partitions 3 --replication-factor 1 --topic logstash_integration_topic_lz4 --zookeeper localhost:2181
 build/kafka/bin/kafka-topics.sh --create --partitions 1 --replication-factor 1 --topic logstash_integration_topic1 --zookeeper localhost:2181

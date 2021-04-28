@@ -1,8 +1,15 @@
+## 10.7.4
+  - Docs: make sure Kafka clients version is updated in docs [#83](https://github.com/logstash-plugins/logstash-integration-kafka/pull/83)
+    Since **10.6.0** Kafka client was updated to **2.5.1**
+
+## 10.7.3
+  - Changed `decorate_events` to add also Kafka headers [#78](https://github.com/logstash-plugins/logstash-integration-kafka/pull/78)
+
 ## 10.7.2
   - Update Jersey dependency to version 2.33 [#75](https://github.com/logstash-plugins/logstash-integration-kafka/pull/75)
 
 ## 10.7.1
-  - Fix: dropped usage of SHUTDOWN event deprecated since Logstash 5.0 [#71](https://github.com/logstash-plugins/logstash-integration-kafka/issue/71)
+  - Fix: dropped usage of SHUTDOWN event deprecated since Logstash 5.0 [#71](https://github.com/logstash-plugins/logstash-integration-kafka/pull/71)
   
 ## 10.7.0
   - Switched use from Faraday to Manticore as HTTP client library to access Schema Registry service 

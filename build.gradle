@@ -54,7 +54,7 @@ dependencies {
     compile('io.confluent:kafka-schema-registry-client:6.1.1') {
         exclude group: 'org.apache.kafka', module:'kafka-clients'
     }
-    compile('org.apache.kafka:kafka_2.12:2.7.0') {
+    compile('org.apache.kafka:kafka_2.12:2.7.1') {
         // contains kafka.utils.VerifiableProperties used by kafka-schema-registry-client, explicitly exclude
         // transitive dependencies
         transitive = false
@@ -64,8 +64,8 @@ dependencies {
     compile 'org.glassfish.jersey.core:jersey-common:2.33'
     // given https://docs.confluent.io/current/installation/versions-interoperability.html matrix
     // Confluent Platform 5.5.x is Apache Kafka 2.5.x
-    compile 'org.apache.kafka:kafka-clients:2.7.0'
-    compile 'com.github.luben:zstd-jni:1.4.9-1'
+    compile 'org.apache.kafka:kafka-clients:2.7.1'
+    compile 'com.github.luben:zstd-jni:1.4.9-5'
     compile 'org.slf4j:slf4j-api:1.7.30'
     compile 'org.lz4:lz4-java:1.7.1'
     compile 'org.xerial.snappy:snappy-java:1.1.8.4'

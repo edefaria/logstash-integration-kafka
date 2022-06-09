@@ -1,6 +1,18 @@
+## 10.12.0
+  - bump kafka client to 2.8.1 [#115](https://github.com/logstash-plugins/logstash-integration-kafka/pull/115)
+
+## 10.11.0
+  - Feat: added connections_max_idle_ms setting for output [#118](https://github.com/logstash-plugins/logstash-integration-kafka/pull/118)
+  - Refactor: mixins to follow shared mixin module naming
+
+## 10.10.1
+  - Update CHANGELOG.md [#114](https://api.github.com/repos/logstash-plugins/logstash-integration-kafka/pulls/114)
+
+## 10.10.0
+  - Added config setting to enable 'zstd' compression in the Kafka output [#112](https://github.com/logstash-plugins/logstash-integration-kafka/pull/112)
+
 ## 10.9.0
   - Refactor: leverage codec when using schema registry [#106](https://github.com/logstash-plugins/logstash-integration-kafka/pull/106)
-  
     Previously using `schema_registry_url` parsed the payload as JSON even if `codec => 'plain'` was set, this is no longer the case.  
 
 ## 10.8.2
@@ -86,7 +98,6 @@
 ## 10.0.1
   - Fix links in changelog pointing to stand-alone plugin changelogs.
   - Refactor: scope java_import to plugin class
-
 
 ## 10.0.0
   - Initial release of the Kafka Integration Plugin, which combines

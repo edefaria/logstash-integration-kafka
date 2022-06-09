@@ -28,7 +28,8 @@ describe "outputs/kafka", :integration => true do
     let(:num_events) { 3 }
 
     before :each do
-      config = base_config.merge({"topic_id" => test_topic})
+      # NOTE: the connections_max_idle_ms is irrelevant just testing that configuration works ...
+      config = base_config.merge({"topic_id" => test_topic, "connections_max_idle_ms" => 540_000})
       load_kafka_data(config)
     end
 
@@ -140,12 +141,22 @@ describe "outputs/kafka", :integration => true do
   end
 
   context 'when using zstd compression' do
-    let(:test_topic) { 'zstd_topic' }
+    let(:test_topic) { 'logstash_integration_zstd_topic' }
 
     before :each do
       config = base_config.merge({"topic_id" => test_topic, "compression_type" => "zstd"})
       load_kafka_data(config)
     end
+
+    # NOTE: depends on zstd-ruby gem which is using a C-extension
+    # it 'should have data integrity' do
+    #   messages = fetch_messages(test_topic)
+    #
+    #   expect(messages.size).to eq(num_events)
+    #   messages.each do |m|
+    #     expect(m.value).to eq(event.to_s)
+    #   end
+    # end
   end
 
   context 'when using multi partition topic' do
